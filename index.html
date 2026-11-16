@@ -31,13 +31,12 @@
     <!-- TOP NAVIGATION BAR WITH DISTINCT PAGE TABS                            -->
     <!-- ===================================================================== -->
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:m-2 focus:px-3 focus:py-2 focus:bg-white focus:rounded">Skip to content</a>
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-md border-b border-white/10">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Lab Logo / Home Switcher -->
                 <a href="#home" onclick="switchTab('home')" class="flex items-center" aria-label="MCM Lab @ KBSI - Home">
-                    <img src="images/logo-full.png" alt="MCM Lab - Multidisciplinary Chromatography &amp; Mass Spectrometry Laboratory" class="hidden sm:block h-8 w-auto" width="1536" height="155">
-                    <img src="images/logo-mcm.png" alt="MCM Lab" class="sm:hidden h-8 w-auto" width="1850" height="648">
+                    <img src="images/logo-full-white.png" alt="MCM Lab - Multidisciplinary Chromatography &amp; Mass Spectrometry Laboratory" class="h-6 sm:h-8 w-auto" width="1989" height="215">
                 </a>
 
                 <!-- Desktop Tab Links -->
@@ -52,7 +51,7 @@
                 </nav>
 
                 <!-- Mobile Hamburger Button -->
-                <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-controls="mobile-menu" aria-expanded="false" class="xl:hidden p-2.5 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-controls="mobile-menu" aria-expanded="false" class="xl:hidden p-2.5 rounded-lg text-white hover:bg-white/10 focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -61,7 +60,7 @@
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1">
+        <div id="mobile-menu" class="hidden xl:hidden bg-navy-900 border-b border-white/10 px-4 pt-2 pb-6 space-y-1">
             <a href="#home" data-tab="home" onclick="switchTab('home')" class="mobile-tab block px-3.5 py-2.5 rounded-lg text-base font-medium">Home</a>
             <a href="#research" data-tab="research" onclick="switchTab('research')" class="mobile-tab block px-3.5 py-2.5 rounded-lg text-base font-medium">Research</a>
             <a href="#team" data-tab="team" onclick="switchTab('team')" class="mobile-tab block px-3.5 py-2.5 rounded-lg text-base font-medium">Team</a>
@@ -81,112 +80,56 @@
         <!-- TAB 1: HOME PAGE VIEW                                             -->
         <!-- ================================================================= -->
         <div id="view-home" class="tab-view">
-            <!-- Hero Banner -->
-            <section class="pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-slate-200/80">
-                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        
-                        <!-- Left Column: Lab Identity & Mission Statement -->
-                        <div class="lg:col-span-7 space-y-6">
-                            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium leading-snug">
-                                <span class="w-2 h-2 rounded-full bg-science-600 shrink-0"></span>
-                                <span>Digital Omics Research Center / Biopharmaceutical Mass Spectrometry Research Unit • KBSI &amp; UST</span>
-                            </div>
+            <!-- Hero -->
+            <section class="hero-bg relative text-white">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 lg:pt-32 lg:pb-24">
+                    <p class="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-sky-300">Digital Omics Research Center &bull; KBSI &amp; UST</p>
+                    <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight mt-5 max-w-4xl">
+                        Multidisciplinary Chromatography &amp; Mass Spectrometry Laboratory
+                    </h1>
+                    <p class="mt-6 text-lg sm:text-xl text-sky-200 font-medium">Advancing Science Through Precision Analysis</p>
+                    <p class="mt-5 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+                        At the MCM Lab, we harness mass spectrometry and chromatography to illuminate the intricacies of molecules, one ion at a time.
+                    </p>
+                    <div class="mt-9 flex flex-wrap gap-3">
+                        <a href="#research" onclick="switchTab('research')" class="px-6 py-3.5 rounded-lg bg-sky-500 text-white text-sm font-semibold hover:bg-sky-400 transition-colors">Explore Research &rarr;</a>
+                        <a href="#team" onclick="switchTab('team')" class="px-6 py-3.5 rounded-lg border border-white/30 text-white text-sm font-semibold hover:bg-white/10 transition-colors">Meet the Team</a>
+                        <a href="#publications" onclick="switchTab('publications')" class="px-6 py-3.5 rounded-lg border border-white/30 text-white text-sm font-semibold hover:bg-white/10 transition-colors">Publications</a>
+                    </div>
 
-                            <div class="space-y-2">
-                                <p class="text-sm font-semibold uppercase tracking-widest text-science-600">
-                                    Advancing Science Through Precision Analysis
-                                </p>
-                                <h1 class="font-serif text-3xl sm:text-5xl font-medium text-navy-900 leading-[1.15] tracking-tight">
-                                    Multidisciplinary Chromatography &amp; Mass Spectrometry Laboratory
-                                </h1>
-                            </div>
-
-                            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-                                At the MCM Lab, we are on a relentless quest to unravel the mysteries of matter. Nestled at the intersection of cutting-edge technology and scientific discovery, our laboratory is a dynamic hub where innovation meets precision. We are passionate about harnessing the power of mass spectrometry and chromatography to illuminate the intricacies of molecules, one ion at a time.
-                            </p>
-
-                            <div class="pt-2 flex flex-wrap gap-3">
-                                <a href="#research" onclick="switchTab('research')" class="px-5 py-3 rounded-lg bg-navy-900 text-white text-sm font-medium hover:bg-science-600 transition-colors">
-                                    Explore Research &rarr;
-                                </a>
-                                <a href="#team" onclick="switchTab('team')" class="px-5 py-3 rounded-lg bg-white text-navy-900 border border-slate-300 text-sm font-medium hover:border-navy-900 transition-colors">
-                                    Meet the Team
-                                </a>
-                                <a href="#publications" onclick="switchTab('publications')" class="px-5 py-3 rounded-lg bg-slate-50 text-slate-700 border border-slate-200 text-sm font-medium hover:bg-slate-100 transition-colors">
-                                    Publications
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Right Column: Lab Photo / Analytical Platform Card -->
-                        <!-- PHOTO PLACEHOLDER: Replace the SVG below with your lab group photo (e.g., <img src="images/lab-group.jpg" alt="MCM Lab Group" class="w-full h-auto rounded-xl object-cover">) -->
-                        <div class="lg:col-span-5">
-                            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-6 sm:p-7">
-                                <div class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-4 flex justify-between items-center">
-                                    <span>MCM Lab • Cho Research Group</span>
-                                    <span class="text-science-600 font-semibold">KBSI Ochang</span>
-                                </div>
-                                
-                                <svg viewBox="0 0 400 265" class="w-full h-auto rounded-xl bg-white border border-slate-200/80 p-3" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M25 220 H375" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"/>
-                                    <path d="M45 30 V235" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"/>
-                                    
-                                    <!-- Chromatographic Elution + Ion Mobility / MS -->
-                                    <path d="M55 220 Q72 220 82 165 Q92 220 105 220" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2"/>
-                                    <path d="M115 220 Q132 220 145 115 Q158 220 175 220" fill="#BFDBFE" stroke="#1D4ED8" stroke-width="2"/>
-                                    <path d="M185 220 Q205 220 220 80 Q235 220 255 220" fill="#93C5FD" stroke="#1E40AF" stroke-width="2"/>
-                                    <path d="M265 220 Q282 220 295 145 Q308 220 325 220" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2"/>
-
-                                    <!-- Top Callout Badges -->
-                                    <rect x="65" y="28" width="130" height="44" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
-                                    <text x="77" y="47" fill="#0F172A" font-size="10.5" font-family="Inter, sans-serif" font-weight="600">LC / UPLC / GC×GC</text>
-                                    <text x="77" y="61" fill="#475569" font-size="9.5" font-family="Inter, sans-serif">High-Resolution Separation</text>
-
-                                    <rect x="215" y="28" width="145" height="44" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.2"/>
-                                    <text x="227" y="47" fill="#1E40AF" font-size="10.5" font-family="Inter, sans-serif" font-weight="600">Cyclic IMS / Orbitrap / QQQ</text>
-                                    <text x="227" y="61" fill="#1D4ED8" font-size="9.5" font-family="Inter, sans-serif">Multi-Omics &amp; Biologics</text>
-
-                                    <text x="332" y="238" fill="#64748B" font-size="10.5" font-family="JetBrains Mono, monospace">RT / m/z</text>
-                                    <text x="15" y="42" fill="#64748B" font-size="10.5" font-family="JetBrains Mono, monospace">Int.</text>
-                                </svg>
-
-                                <div class="mt-4 pt-3.5 border-t border-slate-200 flex items-center justify-between text-xs text-slate-600">
-                                    <span>Ochang Institute for Biological &amp; Environmental Science</span>
-                                    <a href="#instruments" onclick="switchTab('instruments')" class="text-science-600 font-medium hover:underline shrink-0 ml-2">13 Systems &rarr;</a>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <a href="#instruments" onclick="switchTab('instruments')" class="rounded-xl bg-white/5 border border-white/15 p-5 hover:bg-white/10 transition-colors backdrop-blur-sm">
+                            <div class="font-serif text-4xl text-white">7</div>
+                            <div class="font-semibold mt-1">Mass Spectrometry Systems</div>
+                            <p class="text-xs text-slate-300 mt-1">Cyclic IMS, Synapt G2, QQQ, TripleTOF, MALDI-TOF/TOF &amp; GC&times;GC-TOFMS</p>
+                        </a>
+                        <a href="#instruments" onclick="switchTab('instruments')" class="rounded-xl bg-white/5 border border-white/15 p-5 hover:bg-white/10 transition-colors backdrop-blur-sm">
+                            <div class="font-serif text-4xl text-white">6</div>
+                            <div class="font-semibold mt-1">Chromatography Platforms</div>
+                            <p class="text-xs text-slate-300 mt-1">Waters Acquity UPLC, Agilent Infinity II, Shimadzu Nexera &amp; Futecs GPC</p>
+                        </a>
+                        <a href="#team" onclick="switchTab('team')" class="rounded-xl bg-white/5 border border-white/15 p-5 hover:bg-white/10 transition-colors backdrop-blur-sm">
+                            <div class="font-serif text-4xl text-white">UST</div>
+                            <div class="font-semibold mt-1">UST-KBSI Graduate Program</div>
+                            <p class="text-xs text-slate-300 mt-1">Dept. of Bio-Analytical Science &bull; M.S., Ph.D. &amp; Integrated Degree Training</p>
+                        </a>
                     </div>
                 </div>
             </section>
 
-            <!-- Quick Stats / Highlights Bar -->
-            <section class="bg-slate-50 border-b border-slate-200/80">
-                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                        <a href="#instruments" onclick="switchTab('instruments')" class="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 hover:border-science-600/50 transition-colors">
-                            <div class="w-10 h-10 rounded-lg bg-science-50 text-science-600 flex items-center justify-center font-mono font-semibold text-sm shrink-0">07</div>
-                            <div>
-                                <div class="font-semibold text-navy-900 text-sm">Mass Spectrometry Systems</div>
-                                <p class="text-xs text-slate-500 mt-0.5">Cyclic IMS, Synapt G2, QQQ, TripleTOF, MALDI-TOF/TOF &amp; GC×GC-TOFMS</p>
-                            </div>
-                        </a>
-                        <a href="#instruments" onclick="switchTab('instruments')" class="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 hover:border-science-600/50 transition-colors">
-                            <div class="w-10 h-10 rounded-lg bg-science-50 text-science-600 flex items-center justify-center font-mono font-semibold text-sm shrink-0">06</div>
-                            <div>
-                                <div class="font-semibold text-navy-900 text-sm">Chromatography Platforms</div>
-                                <p class="text-xs text-slate-500 mt-0.5">Waters Acquity UPLC, Agilent Infinity II, Shimadzu Nexera &amp; Futecs GPC</p>
-                            </div>
-                        </a>
-                        <a href="#team" onclick="switchTab('team')" class="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 hover:border-science-600/50 transition-colors">
-                            <div class="w-10 h-10 rounded-lg bg-science-50 text-science-600 flex items-center justify-center font-mono font-semibold text-xs shrink-0">UST</div>
-                            <div>
-                                <div class="font-semibold text-navy-900 text-sm">UST-KBSI Graduate Program</div>
-                                <p class="text-xs text-slate-500 mt-0.5">Dept. of Bio-Analytical Science • M.S., Ph.D. &amp; Integrated Degree Training</p>
-                            </div>
-                        </a>
+            <!-- Mission -->
+            <section class="py-16 lg:py-24 bg-white">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
+                    <div class="lg:col-span-3">
+                        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-science-600">Our Mission</span>
+                    </div>
+                    <div class="lg:col-span-9 space-y-6">
+                        <p class="font-serif text-2xl sm:text-3xl text-navy-900 leading-snug">
+                            We unravel the mysteries of matter by combining high-resolution separation science with advanced mass spectrometric detection.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed">
+                            Nestled at the intersection of cutting-edge technology and scientific discovery, our laboratory is a dynamic hub where innovation meets precision. Our workflows span biopharmaceuticals, multi-omics, and environmental and material sciences.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -232,9 +175,9 @@
             <!-- Recruitment & Collaboration Banner -->
             <section class="py-14 bg-white border-t border-slate-200/80">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="rounded-2xl bg-navy-900 text-white p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    <div class="rounded-2xl page-hero text-white p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                         <div class="space-y-2 max-w-2xl">
-                            <span class="text-xs font-mono uppercase tracking-widest text-blue-300">KBSI Ochang • UST Bio-Analytical Science</span>
+                            <span class="text-xs font-mono uppercase tracking-widest text-sky-300">KBSI Ochang • UST Bio-Analytical Science</span>
                             <h3 class="font-serif text-2xl sm:text-3xl font-medium">Join the Cho Research Group</h3>
                             <p class="text-sm text-slate-300 leading-relaxed">
                                 We welcome prospective graduate students (UST-KBSI), postdoctoral researchers, and collaborative partners interested in chromatography, mass spectrometry, multi-omics, and biotherapeutic characterization.
@@ -252,13 +195,13 @@
         <!-- TAB 2: RESEARCH PAGE VIEW                                         -->
         <!-- ================================================================= -->
         <div id="view-research" class="tab-view hidden">
-            <section class="py-14 lg:py-20 bg-slate-50 border-b border-slate-200">
+            <section class="page-hero py-16 lg:py-24 text-white">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-science-600">Research Program</span>
-                    <h1 class="font-serif text-3xl sm:text-5xl font-medium text-navy-900 mt-2">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-sky-300">Research Program</span>
+                    <h1 class="font-serif text-3xl sm:text-5xl font-medium text-white mt-2">
                         Multidisciplinary Chromatography &amp; Mass Spectrometry
                     </h1>
-                    <p class="text-slate-600 text-base sm:text-lg mt-4 max-w-4xl leading-relaxed">
+                    <p class="text-slate-300 text-base sm:text-lg mt-4 max-w-4xl leading-relaxed">
                         At the MCM Lab, our research is driven by a commitment to exploring the frontiers of science and technology. We specialize in the analysis and characterization of complex biological and chemical systems using cutting-edge chromatography and mass spectrometry techniques. By integrating high-resolution separation science with advanced mass spectrometric detection, our group develops innovative analytical workflows across biopharmaceuticals, multi-omics, and environmental/material sciences.
                     </p>
                 </div>
@@ -275,11 +218,11 @@
         <!-- TAB 3: TEAM PAGE VIEW                                             -->
         <!-- ================================================================= -->
         <div id="view-team" class="tab-view hidden">
-            <section class="py-14 lg:py-20 bg-slate-50 border-b border-slate-200">
+            <section class="page-hero py-16 lg:py-24 text-white">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-science-600">People</span>
-                    <h1 class="font-serif text-3xl sm:text-5xl font-medium text-navy-900 mt-2">Team Members</h1>
-                    <p class="text-slate-600 text-base sm:text-lg mt-4 max-w-2xl leading-relaxed">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-sky-300">People</span>
+                    <h1 class="font-serif text-3xl sm:text-5xl font-medium text-white mt-2">Team Members</h1>
+                    <p class="text-slate-300 text-base sm:text-lg mt-4 max-w-2xl leading-relaxed">
                         Cho Research Group at the Digital Omics Research Center / Biopharmaceutical Mass Spectrometry Research Unit, KBSI.
                     </p>
                 </div>
@@ -296,7 +239,7 @@
                                 <!-- PHOTO PLACEHOLDER: Replace src with Dr. Kun Cho's portrait (e.g., images/kun-cho.jpg) -->
                                 <div class="lg:col-span-3">
                                     <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
-                                        <img data-ph="400,400,eff6ff,Dr. Kun Cho (조건)" alt="Dr. Kun Cho" class="w-full h-full object-cover">
+                                        <img data-photo="images/team/kun-cho.jpg" alt="Dr. Kun Cho" class="w-full h-full object-cover">
                                     </div>
                                 </div>
                                 <div class="lg:col-span-9 space-y-5">
@@ -374,11 +317,11 @@
         <!-- TAB 4: PUBLICATIONS PAGE VIEW                                     -->
         <!-- ================================================================= -->
         <div id="view-publications" class="tab-view hidden">
-            <section class="py-14 lg:py-20 bg-slate-50 border-b border-slate-200">
+            <section class="page-hero py-16 lg:py-24 text-white">
                 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-science-600">Scholarly Output</span>
-                    <h1 class="font-serif text-3xl sm:text-5xl font-medium text-navy-900 mt-2">Publications</h1>
-                    <p class="text-slate-600 text-base mt-3 max-w-2xl">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-sky-300">Scholarly Output</span>
+                    <h1 class="font-serif text-3xl sm:text-5xl font-medium text-white mt-2">Publications</h1>
+                    <p class="text-slate-300 text-base mt-3 max-w-2xl">
                         Recent peer-reviewed publications from MCM Lab @ KBSI (* denotes corresponding author; lab members in <strong>bold</strong>).
                     </p>
                 </div>
@@ -425,13 +368,13 @@
         <!-- TAB 5: INSTRUMENTS & PLATFORMS PAGE VIEW                          -->
         <!-- ================================================================= -->
         <div id="view-instruments" class="tab-view hidden">
-            <section class="py-14 lg:py-20 bg-slate-50 border-b border-slate-200">
+            <section class="page-hero py-16 lg:py-24 text-white">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-science-600">Infrastructure</span>
-                    <h1 class="font-serif text-3xl sm:text-5xl font-medium text-navy-900 mt-2">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-sky-300">Infrastructure</span>
+                    <h1 class="font-serif text-3xl sm:text-5xl font-medium text-white mt-2">
                         Instruments &amp; Analytical Platforms
                     </h1>
-                    <p class="text-slate-600 text-base sm:text-lg mt-4 max-w-3xl leading-relaxed">
+                    <p class="text-slate-300 text-base sm:text-lg mt-4 max-w-3xl leading-relaxed">
                         Located in Building 204 (Mass Spectrometry Research Building) at the KBSI Ochang Campus, our laboratory operates 7 state-of-the-art mass spectrometry systems and 6 liquid/gel chromatography platforms.
                     </p>
                 </div>
@@ -476,13 +419,13 @@
         <!-- TAB 6: RESOURCES (SOFTWARE & EDUCATION) PAGE VIEW                 -->
         <!-- ================================================================= -->
         <div id="view-resources" class="tab-view hidden">
-            <section class="py-14 lg:py-20 bg-slate-50 border-b border-slate-200">
+            <section class="page-hero py-16 lg:py-24 text-white">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-science-600">Computational &amp; Training</span>
-                    <h1 class="font-serif text-3xl sm:text-5xl font-medium text-navy-900 mt-2">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-sky-300">Computational &amp; Training</span>
+                    <h1 class="font-serif text-3xl sm:text-5xl font-medium text-white mt-2">
                         Research Tools, Software &amp; Education
                     </h1>
-                    <p class="text-slate-600 text-base sm:text-lg mt-4 max-w-3xl leading-relaxed">
+                    <p class="text-slate-300 text-base sm:text-lg mt-4 max-w-3xl leading-relaxed">
                         Bioinformatics pipelines, mass spectrometry software suites, and core analytical chemistry training topics utilized in MCM Lab.
                     </p>
                 </div>
@@ -524,13 +467,13 @@
         <!-- TAB 7: CONTACT & LOCATION PAGE VIEW                               -->
         <!-- ================================================================= -->
         <div id="view-contact" class="tab-view hidden">
-            <section class="py-14 lg:py-20 bg-slate-50 border-b border-slate-200">
+            <section class="page-hero py-16 lg:py-24 text-white">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-science-600">Get In Touch</span>
-                    <h1 class="font-serif text-3xl sm:text-5xl font-medium text-navy-900 mt-2">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-sky-300">Get In Touch</span>
+                    <h1 class="font-serif text-3xl sm:text-5xl font-medium text-white mt-2">
                         Contact &amp; Laboratory Location
                     </h1>
-                    <p class="text-slate-600 text-base sm:text-lg mt-4 max-w-2xl leading-relaxed">
+                    <p class="text-slate-300 text-base sm:text-lg mt-4 max-w-2xl leading-relaxed">
                         Connect with the Cho Research Group at the Korea Basic Science Institute (KBSI) Ochang Campus.
                     </p>
                 </div>
@@ -650,15 +593,33 @@
     <!-- ===================================================================== -->
     <!-- COMPACT INSTITUTIONAL FOOTER (Shared Across All Tabs)                 -->
     <!-- ===================================================================== -->
-    <footer class="bg-slate-50 border-t border-slate-200 py-8 mt-auto">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
-                <img src="images/logo-mcm.png" alt="" class="h-4 w-auto"><span class="font-semibold text-navy-900">MCM Lab @ KBSI</span>
-                <span>•</span>
-                <span>Cho Research Group • Ochang, Cheongju-si, Republic of Korea</span>
+    <footer class="bg-navy-900 text-slate-300 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-12 gap-10 text-sm">
+            <div class="md:col-span-5 space-y-4">
+                <img src="images/logo-full-white.png" alt="MCM Lab @ KBSI" class="h-7 w-auto" width="1989" height="215">
+                <p class="text-slate-400 leading-relaxed">Cho Research Group, Digital Omics Research Center / Biopharmaceutical Mass Spectrometry Research Unit, Korea Basic Science Institute (KBSI).</p>
+                <p class="font-medium text-sky-300">We are seeking highly motivated graduate students and postdoctoral researchers.</p>
             </div>
-            <div>
-                &copy; <span id="current-year"></span> MCM Lab • <span class="text-slate-700">www.mcmlabkbsi.com</span>
+            <div class="md:col-span-4 space-y-2 text-slate-400">
+                <div class="text-white font-semibold mb-2">Contact</div>
+                <p>162, Yeongudanji-ro, Ochang-eup, Cheongwon-gu, Cheongju-si, Chungcheongbuk-do 28119, Republic of Korea</p>
+                <p>Building 204, Mass Spectrometry Research Building</p>
+                <p>Tel: +82-43-240-5143</p>
+                <p><a href="mailto:mcmlabkbsi@gmail.com" class="hover:text-white">mcmlabkbsi@gmail.com</a></p>
+            </div>
+            <div class="md:col-span-3 space-y-2">
+                <div class="text-white font-semibold mb-2">Explore</div>
+                <a href="#research" onclick="switchTab('research')" class="block hover:text-white">Research</a>
+                <a href="#team" onclick="switchTab('team')" class="block hover:text-white">Team</a>
+                <a href="#publications" onclick="switchTab('publications')" class="block hover:text-white">Publications</a>
+                <a href="#instruments" onclick="switchTab('instruments')" class="block hover:text-white">Instruments</a>
+                <a href="#contact" onclick="switchTab('contact')" class="block hover:text-white">Contact</a>
+            </div>
+        </div>
+        <div class="border-t border-white/10">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-xs text-slate-500 flex flex-col sm:flex-row justify-between gap-2">
+                <span>&copy; <span id="current-year"></span> MCM Lab @ KBSI. All rights reserved.</span>
+                <span>www.mcmlabkbsi.com</span>
             </div>
         </div>
     </footer>
@@ -667,16 +628,52 @@
     <!-- JAVASCRIPT: TAB ROUTING & REAL MCMLABKBSI.COM DATA                    -->
     <!-- ===================================================================== -->
     <script>
-        // Placeholder image generator (self-contained, no external requests).
-        // Replace by real photos: set photo/image to e.g. "images/yun.jpg".
-        function ph(w, h, bg, label) {
-            const esc = label.replace(/&/g,'&amp;').replace(/</g,'&lt;');
-            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><rect width="100%" height="100%" fill="#${bg}"/><text x="50%" y="50%" fill="#64748B" font-family="Inter,Arial,sans-serif" font-size="${Math.round(w/22)}" text-anchor="middle" dominant-baseline="middle">${esc}</text></svg>`;
-            return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+        // ---------------------------------------------------------------
+        // Generated artwork + photo slots.
+        // Drop real photos in these folders and they replace the artwork automatically:
+        //   images/instruments/<slug>.jpg   (e.g. waters-synapt-g2.jpg)
+        //   images/team/<slug>.jpg          (e.g. sungho-yun.jpg, kun-cho.jpg)
+        //   images/research/<slug>.jpg      (e.g. proteomics.jpg)
+        // ---------------------------------------------------------------
+        const slug = t => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        const svgUri = svg => 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg).replace(/'/g, '%27');
+        const STR = 'stroke="#7DD3FC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"';
+        const S = 'fill="none" ' + STR;
+
+        function frame(w, h, body, label) {
+            return svgUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0A1020"/><stop offset="1" stop-color="#16407A"/></linearGradient><pattern id="d" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#93C5FD" fill-opacity=".16"/></pattern></defs><rect width="100%" height="100%" fill="url(#g)"/><rect width="100%" height="100%" fill="url(#d)"/>${body}${label ? `<text x="${w/2}" y="${h-18}" fill="#BFDBFE" fill-opacity=".8" font-family="Inter,Arial,sans-serif" font-size="${Math.round(w/32)}" text-anchor="middle">${label.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</text>` : ''}</svg>`);
         }
-        document.querySelectorAll('img[data-ph]').forEach(img => {
-            const [w,h,bg,...l] = img.dataset.ph.split(',');
-            img.src = ph(+w,+h,bg,l.join(','));
+        const hex = (cx, cy, r) => Array.from({length: 6}, (_, i) => [cx + r*Math.cos(Math.PI/3*i + Math.PI/6), cy + r*Math.sin(Math.PI/3*i + Math.PI/6)].map(n => n.toFixed(1)).join(',')).join(' ');
+        const antibody = (x, y, k, o) => `<g transform="translate(${x} ${y}) scale(${k})" opacity="${o}"><path d="M0 110 V55 M0 55 L-48 0 M0 55 L48 0" ${S}/><circle cx="-48" cy="0" r="9" fill="#38BDF8"/><circle cx="48" cy="0" r="9" fill="#38BDF8"/><circle cx="0" cy="110" r="7" fill="#7DD3FC"/></g>`;
+
+        function researchArt(kind) {
+            let b = '';
+            if (kind === 'bio') b = antibody(170, 110, 1.5, 1) + antibody(380, 170, 1.1, .7) + antibody(520, 90, .8, .5) + `<path d="M60 340 Q200 280 330 330 T600 300" ${S} stroke-opacity=".4"/>`;
+            else if (kind === 'prot') {
+                for (let i = 0; i < 28; i++) { const h = 30 + Math.abs(Math.sin(i * 1.7) * 150) + (i % 5 === 0 ? 40 : 0); b += `<line x1="${50+i*20}" y1="360" x2="${50+i*20}" y2="${360-h}" stroke="#7DD3FC" stroke-width="5" stroke-opacity="${.35+(h/260)}"/>`; }
+                b += Array.from({length: 11}, (_, i) => `<circle cx="${70+i*50}" cy="${80+Math.sin(i)*28}" r="11" fill="#38BDF8" fill-opacity=".8"/>`).join('') + `<path d="${Array.from({length: 11}, (_, i) => `${i?'L':'M'}${70+i*50} ${80+Math.sin(i)*28}`).join(' ')}" ${S}/>`;
+            } else if (kind === 'metab') b = [[170,150,60],[290,220,60],[410,150,60],[530,220,60],[290,90,40]].map(([x,y,r]) => `<polygon points="${hex(x,y,r)}" ${S}/><circle cx="${x}" cy="${y}" r="5" fill="#38BDF8"/>`).join('') + `<path d="M230 185 L240 190 M350 185 L360 190 M470 185 L480 190" ${S}/>`;
+            else if (kind === 'lipid') {
+                for (let i = 0; i < 12; i++) { const x = 60 + i*47; b += `<circle cx="${x}" cy="130" r="14" fill="#38BDF8" fill-opacity=".85"/><circle cx="${x}" cy="270" r="14" fill="#38BDF8" fill-opacity=".85"/><path d="M${x-5} 146 Q${x-12} 175 ${x-5} 200 M${x+5} 146 Q${x+12} 175 ${x+5} 200 M${x-5} 254 Q${x-12} 225 ${x-5} 200 M${x+5} 254 Q${x+12} 225 ${x+5} 200" ${S.replace('stroke-width="3"', 'stroke-width="2.5"')} stroke-opacity=".7"/>`; }
+            } else b = [0,1,2].map(i => `<path d="M0 ${230+i*45} Q80 ${190+i*45} 160 ${230+i*45} T320 ${230+i*45} T480 ${230+i*45} T640 ${230+i*45}" ${S} stroke-opacity="${.8-i*.25}"/>`).join('') + `<path d="M460 60 C460 60 410 125 410 160 a50 50 0 0 0 100 0 C510 125 460 60 460 60Z" ${S}/><path d="M200 90 C200 90 170 130 170 150 a30 30 0 0 0 60 0 C230 130 200 90 200 90Z" ${S} stroke-opacity=".5"/>`;
+            return frame(640, 400, b);
+        }
+        function instrumentArt(kind, label) {
+            const b = kind === 'ms'
+                ? `<rect x="190" y="95" width="340" height="150" rx="14" fill="#0F2A52" fill-opacity=".7" ${STR}/><path d="M60 170 L130 150 L190 170 L130 190Z" ${S}/><path d="M190 170 H500" ${S} stroke-dasharray="3 12"/><circle cx="260" cy="170" r="6" fill="#38BDF8"/><circle cx="340" cy="170" r="6" fill="#38BDF8"/><circle cx="420" cy="170" r="6" fill="#38BDF8"/><rect x="490" y="145" width="40" height="50" rx="6" fill="#38BDF8" fill-opacity=".7"/><path d="M190 245 v25 M530 245 v25 M170 270 H550" ${S}/>`
+                : `<rect x="60" y="90" width="120" height="150" rx="10" fill="#0F2A52" fill-opacity=".7" ${STR}/><rect x="420" y="90" width="120" height="150" rx="10" fill="#0F2A52" fill-opacity=".7" ${STR}/><rect x="270" y="60" width="60" height="210" rx="8" fill="#38BDF8" fill-opacity=".25" ${STR}/><path d="M180 140 H270 M330 140 H420 M300 270 v20" ${S}/><circle cx="120" cy="165" r="22" ${S}/><circle cx="480" cy="165" r="22" ${S}/>`;
+            return frame(600, 340, b, label);
+        }
+        function initialsArt(name) {
+            const ini = name.replace(/^Dr\.\s*/, '').split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
+            return frame(360, 360, `<circle cx="180" cy="180" r="92" fill="#0F2A52" fill-opacity=".8" ${STR}/><text x="180" y="205" fill="#E0F2FE" font-family="Georgia,serif" font-size="70" text-anchor="middle">${ini}</text>`);
+        }
+        // <img> with photo-first, generated-art fallback
+        const photoImg = (src, fallback, alt, cls) => `<img src="${src}" onerror="this.onerror=null;this.src='${fallback}'" alt="${alt}" loading="lazy" class="${cls}">`;
+        document.querySelectorAll('img[data-photo]').forEach(img => {
+            const fb = initialsArt(img.alt);
+            img.onerror = () => { img.onerror = null; img.src = fb; };
+            img.src = img.dataset.photo;
         });
 
         document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -700,20 +697,20 @@
                 const isSelected = link.dataset.tab === tabName;
                 if (link.dataset.tab === 'contact') {
                     link.className = isSelected
-                        ? 'nav-tab ml-2 px-4 py-2 rounded-lg bg-science-600 text-white transition-colors'
-                        : 'nav-tab ml-2 px-4 py-2 rounded-lg bg-navy-900 text-white hover:bg-science-600 transition-colors';
+                        ? 'nav-tab ml-2 px-4 py-2 rounded-lg bg-sky-500 text-white transition-colors'
+                        : 'nav-tab ml-2 px-4 py-2 rounded-lg bg-science-600 text-white hover:bg-sky-500 transition-colors';
                 } else {
                     link.className = isSelected
-                        ? 'nav-tab px-3 py-2 rounded-lg bg-science-50 text-science-700 font-semibold transition-colors'
-                        : 'nav-tab px-3 py-2 rounded-lg text-slate-600 hover:text-navy-900 hover:bg-slate-50 transition-colors';
+                        ? 'nav-tab px-3 py-2 rounded-lg bg-white/15 text-white font-semibold transition-colors'
+                        : 'nav-tab px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors';
                 }
             });
 
             document.querySelectorAll('.mobile-tab').forEach(link => {
                 const isSelected = link.dataset.tab === tabName;
                 link.className = isSelected
-                    ? 'mobile-tab block px-3.5 py-2.5 rounded-lg text-base font-semibold bg-science-50 text-science-700'
-                    : 'mobile-tab block px-3.5 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50';
+                    ? 'mobile-tab block px-3.5 py-2.5 rounded-lg text-base font-semibold bg-white/15 text-white'
+                    : 'mobile-tab block px-3.5 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-white/10';
             });
 
             document.querySelectorAll('[data-tab]').forEach(l => {
@@ -746,7 +743,7 @@
                 shortDesc: "High-throughput and reliable LC-MS and ion mobility workflows for monoclonal antibodies, subtle structural variants, and regulatory comparability.",
                 fullDesc: "Biotherapeutics—especially monoclonal antibodies (mAbs) and next-generation recombinant protein drugs—exhibit intricate structural heterogeneity arising from glycosylation, charge variants, disulfide isoforms, and higher-order conformational dynamics. We develop high-throughput, high-precision chromatographic and mass spectrometric methods (including intact mass, middle-down, peptide mapping, and cyclic ion mobility MS) to resolve subtle structural variations and support regulatory approval and quality control.",
                 tags: ["Monoclonal Antibodies (mAbs)", "Higher-Order Structure", "Glycosylation & PTM Mapping", "Cyclic IM-MS", "Regulatory Comparability"],
-                image: ph(640,400,"eff6ff","Biotherapeutics Characterization")
+                art: "bio"
             },
             {
                 number: "02",
@@ -754,7 +751,7 @@
                 shortDesc: "Quantitative LC-MS/MS proteomics, post-translational modification profiling, host-pathogen interactions, and plant stress proteomics.",
                 fullDesc: "Our proteomics program applies high-resolution orbitrap and Q-TOF mass spectrometry coupled with nano-UHPLC to quantify global proteome remodeling across diverse biological systems. Research spans viral-host interaction networks (such as murine norovirus infection signaling), plant abiotic/herbicide stress mitigation mechanisms, and comprehensive post-translational modification (PTM) profiling.",
                 tags: ["Quantitative Proteomics (LFQ / TMT / DIA)", "Host–Pathogen Proteomics", "Plant Stress Proteomics", "PTM Localization"],
-                image: ph(640,400,"eff6ff","Quantitative & Functional Proteomics")
+                art: "prot"
             },
             {
                 number: "03",
@@ -762,7 +759,7 @@
                 shortDesc: "Untargeted and targeted metabolic profiling using UPLC-HRMS and comprehensive two-dimensional GC×GC-TOFMS.",
                 fullDesc: "We investigate small-molecule metabolic pathways and biomarker signatures in biological fluids, tissues, and cellular models. By combining reversed-phase and HILIC UPLC-high-resolution mass spectrometry with comprehensive two-dimensional gas chromatography time-of-flight mass spectrometry (GC×GC-TOFMS) and triple-quadrupole MRM quantification, we achieve broad metabolome coverage.",
                 tags: ["Untargeted HRMS Profiling", "Targeted MRM Quantification", "GC×GC-TOFMS", "Metabolic Pathway Analysis"],
-                image: ph(640,400,"eff6ff","Targeted & Untargeted Metabolomics")
+                art: "metab"
             },
             {
                 number: "04",
@@ -770,7 +767,7 @@
                 shortDesc: "Comprehensive lipidome characterization and optimized fatty acid quantification across complex biological and culture media.",
                 fullDesc: "Lipids play central roles in membrane architecture, energy homeostasis, and cellular signaling. Our group develops optimized extraction, derivatization, and chromatographic-mass spectrometric platforms for precise identification and absolute quantification of fatty acids, phospholipids, sphingolipids, and neutral lipids in complex biological and cell culture media.",
                 tags: ["Fatty Acid Quantification", "LC-MS/MS Lipid Profiling", "Complex Media Optimization", "LipidXplorer / LipidSearch"],
-                image: ph(640,400,"eff6ff","Comprehensive Lipidomics")
+                art: "lipid"
             },
             {
                 number: "05",
@@ -778,7 +775,7 @@
                 shortDesc: "High-resolution chromatographic, GPC, and mass spectrometric analysis of environmental contaminants, polymers, and advanced materials.",
                 fullDesc: "Extending separation and mass spectrometry beyond biological systems, we analyze trace environmental pollutants, agrochemical residues, synthetic polymers, and functional materials. Utilizing high-resolution GC-HRT+ 4D, MALDI-TOF/TOF, and Gel Permeation Chromatography (GPC), we characterize molecular weight distributions, chemical compositions, and degradation pathways.",
                 tags: ["Trace Contaminant Analysis", "Polymer Molecular Weight (GPC)", "MALDI-TOF/TOF Characterization", "GC-HRT+ 4D"],
-                image: ph(640,400,"eff6ff","Environmental & Material Science")
+                art: "env"
             }
         ];
 
@@ -786,14 +783,13 @@
             // Render Home 5 cards
             const homeGrid = document.getElementById('home-research-cards');
             homeGrid.innerHTML = researchAreas.map(area => `
-                <a href="#research" onclick="switchTab('research')" class="group block rounded-2xl border border-slate-200 p-6 bg-white hover:border-science-600/60 hover:shadow-sm transition-all">
-                    <span class="text-xs font-mono font-semibold text-science-600">AREA ${area.number}</span>
-                    <h3 class="font-serif text-xl font-medium text-navy-900 mt-2 mb-2.5 group-hover:text-science-600 transition-colors">
-                        ${area.title}
-                    </h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        ${area.shortDesc}
-                    </p>
+                <a href="#research" onclick="switchTab('research')" class="group block rounded-2xl border border-slate-200 bg-white overflow-hidden hover:border-science-600/60 hover:shadow-lg transition-all">
+                    <div class="h-44 overflow-hidden bg-navy-900">${photoImg('images/research/' + slug(area.title) + '.jpg', researchArt(area.art), area.title, 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500')}</div>
+                    <div class="p-6">
+                        <span class="text-xs font-mono font-semibold text-science-600">AREA ${area.number}</span>
+                        <h3 class="font-serif text-xl font-medium text-navy-900 mt-2 mb-2.5 group-hover:text-science-600 transition-colors">${area.title}</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">${area.shortDesc}</p>
+                    </div>
                 </a>
             `).join('');
 
@@ -812,7 +808,7 @@
                     <div class="lg:col-span-5 ${idx % 2 === 1 ? 'lg:order-1' : ''}">
                         <!-- PHOTO PLACEHOLDER: Replace with research figure image -->
                         <div class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
-                            <img src="${area.image}" alt="${area.title}" class="w-full h-auto object-cover">
+                            ${photoImg('images/research/' + slug(area.title) + '.jpg', researchArt(area.art), area.title, 'w-full h-auto object-cover')}
                         </div>
                     </div>
                 </div>
@@ -846,11 +842,11 @@
         ];
 
         function memberCard(m) {
-            const photo = m.photo || ph(360, 360, "f1f5f9", m.name);
+            
             return `
                 <div class="bg-white rounded-2xl border border-slate-200 p-5 hover:border-science-600/40 transition-colors">
                     <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 mb-4 border border-slate-100">
-                        <img src="${photo}" alt="${m.name}" class="w-full h-full object-cover">
+                        ${photoImg('images/team/' + slug(m.name) + '.jpg', initialsArt(m.name), m.name, 'w-full h-full object-cover')}
                     </div>
                     <h3 class="font-semibold text-navy-900 text-base">
                         ${m.name} ${m.koreanName ? `<span class="text-slate-500 font-normal text-sm">(${m.koreanName})</span>` : ''}
@@ -1083,50 +1079,43 @@
                 name: "Waters SELECT Series Cyclic IMS",
                 vendor: "Waters",
                 type: "Cyclic Ion Mobility Q-TOF MS",
-                detail: "Multi-pass cyclic ion mobility separation coupled with high-resolution TOF mass spectrometry for intact biotherapeutics, conformer resolution, and structural characterization.",
-                image: ph(600,340,"f1f5f9","Waters SELECT Series Cyclic IMS")
+                detail: "Multi-pass cyclic ion mobility separation coupled with high-resolution TOF mass spectrometry for intact biotherapeutics, conformer resolution, and structural characterization."
             },
             {
                 name: "Waters Synapt G2",
                 vendor: "Waters",
                 type: "HDMS Q-TOF Mass Spectrometer",
-                detail: "Traveling-wave ion mobility high-definition mass spectrometry platform for native protein complexes, metabolomics, and HDX-MS workflows.",
-                image: ph(600,340,"f1f5f9","Waters Synapt G2")
+                detail: "Traveling-wave ion mobility high-definition mass spectrometry platform for native protein complexes, metabolomics, and HDX-MS workflows."
             },
             {
                 name: "Agilent 6495D Triple Quadrupole MS",
                 vendor: "Agilent Technologies",
                 type: "Ultra-High Sensitivity LC/TQ",
-                detail: "High-sensitivity iFunnel triple quadrupole MS engineered for ultra-trace targeted metabolomics, lipidomics, and peptide MRM quantification.",
-                image: ph(600,340,"f1f5f9","Agilent 6495D Triple Quadrupole MS")
+                detail: "High-sensitivity iFunnel triple quadrupole MS engineered for ultra-trace targeted metabolomics, lipidomics, and peptide MRM quantification."
             },
             {
                 name: "Agilent 6460 Triple Quadrupole LC/MS",
                 vendor: "Agilent Technologies",
                 type: "Triple Quadrupole LC/MS",
-                detail: "Agilent Jet Stream electrospray triple quadrupole system for robust quantitative small-molecule, fatty acid, and environmental residue analysis.",
-                image: ph(600,340,"f1f5f9","Agilent 6460 Triple Quadrupole LC/MS")
+                detail: "Agilent Jet Stream electrospray triple quadrupole system for robust quantitative small-molecule, fatty acid, and environmental residue analysis."
             },
             {
                 name: "Sciex TripleTOF 5600+",
                 vendor: "SCIEX",
                 type: "High-Resolution Q-TOF MS/MS",
-                detail: "Fast-scanning accurate-mass Q-TOF platform supporting SWATH DIA proteomics, untargeted metabolomics, and high-throughput MS/MS profiling.",
-                image: ph(600,340,"f1f5f9","Sciex TripleTOF 5600+")
+                detail: "Fast-scanning accurate-mass Q-TOF platform supporting SWATH DIA proteomics, untargeted metabolomics, and high-throughput MS/MS profiling."
             },
             {
                 name: "Bruker ultrafleXtreme MALDI-TOF/TOF",
                 vendor: "Bruker Daltonics",
                 type: "MALDI-TOF/TOF & Imaging MS",
-                detail: "High-speed smartbeam-II laser MALDI-TOF/TOF system for intact biomolecule fingerprinting, glycan/polymer characterization, and MALDI mass spectrometry imaging (MSI).",
-                image: ph(600,340,"f1f5f9","Bruker ultrafleXtreme MALDI-TOF/TOF")
+                detail: "High-speed smartbeam-II laser MALDI-TOF/TOF system for intact biomolecule fingerprinting, glycan/polymer characterization, and MALDI mass spectrometry imaging (MSI)."
             },
             {
                 name: "Leco Pegasus GC-HRT+ 4D High Resolution GC×GC-TOFMS",
                 vendor: "LECO",
                 type: "4D Comprehensive GC×GC-HRTOFMS",
-                detail: "Comprehensive two-dimensional gas chromatography coupled with high-resolution Folded Flight Path TOFMS for complex volatile metabolomes and environmental matrices.",
-                image: ph(600,340,"f1f5f9","Leco Pegasus GC-HRT+ 4D")
+                detail: "Comprehensive two-dimensional gas chromatography coupled with high-resolution Folded Flight Path TOFMS for complex volatile metabolomes and environmental matrices."
             }
         ];
 
@@ -1135,52 +1124,46 @@
                 name: "Acquity UPLC I-Class PLUS System",
                 vendor: "Waters",
                 type: "Ultra-Low Dispersion UPLC",
-                detail: "Ultra-low system dispersion liquid chromatography platform optimized for maximum peak capacity and hyphenation with high-resolution MS.",
-                image: ph(600,340,"eff6ff","Acquity UPLC I-Class PLUS")
+                detail: "Ultra-low system dispersion liquid chromatography platform optimized for maximum peak capacity and hyphenation with high-resolution MS."
             },
             {
                 name: "Acquity UPLC H-Class PLUS System",
                 vendor: "Waters",
                 type: "Quaternary Bio-Inert UPLC",
-                detail: "Flexible quaternary solvent blending UPLC system tailored for biotherapeutic peptide mapping, SEC/IEX/HILIC, and routine method development.",
-                image: ph(600,340,"eff6ff","Acquity UPLC H-Class PLUS")
+                detail: "Flexible quaternary solvent blending UPLC system tailored for biotherapeutic peptide mapping, SEC/IEX/HILIC, and routine method development."
             },
             {
                 name: "Agilent 1290 Infinity II LC",
                 vendor: "Agilent Technologies",
                 type: "Ultra-High Performance LC (UHPLC)",
-                detail: "High-pressure UHPLC front-end providing fast gradient separations and high retention-time reproducibility for LC-MS/MS omics and biologics.",
-                image: ph(600,340,"eff6ff","Agilent 1290 Infinity II LC")
+                detail: "High-pressure UHPLC front-end providing fast gradient separations and high retention-time reproducibility for LC-MS/MS omics and biologics."
             },
             {
                 name: "Agilent 1260 Infinity II LC",
                 vendor: "Agilent Technologies",
                 type: "Analytical HPLC System",
-                detail: "Versatile analytical liquid chromatography platform supporting multi-wavelength UV/FLD detection and routine quantitative separations.",
-                image: ph(600,340,"eff6ff","Agilent 1260 Infinity II LC")
+                detail: "Versatile analytical liquid chromatography platform supporting multi-wavelength UV/FLD detection and routine quantitative separations."
             },
             {
                 name: "Shimadzu UPLC Nexera Series",
                 vendor: "Shimadzu",
                 type: "Ultra-High Performance LC",
-                detail: "High-speed, high-sensitivity UHPLC system engineered for rapid multi-component chromatographic separation and quantitative workflows.",
-                image: ph(600,340,"eff6ff","Shimadzu UPLC Nexera Series")
+                detail: "High-speed, high-sensitivity UHPLC system engineered for rapid multi-component chromatographic separation and quantitative workflows."
             },
             {
                 name: "Futecs GPC-6000",
                 vendor: "Futecs",
                 type: "Gel Permeation Chromatography (GPC)",
-                detail: "Dedicated size-exclusion / gel permeation chromatography system for polymer molecular weight distribution and macromolecular size characterization.",
-                image: ph(600,340,"eff6ff","Futecs GPC-6000")
+                detail: "Dedicated size-exclusion / gel permeation chromatography system for polymer molecular weight distribution and macromolecular size characterization."
             }
         ];
 
         function renderInstruments() {
-            const renderCard = (inst) => `
+            const renderCard = kind => (inst) => `
                 <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col">
                     <!-- PHOTO PLACEHOLDER: Replace inst.image URL with actual lab instrument photo -->
-                    <div class="h-44 bg-slate-100 border-b border-slate-200">
-                        <img src="${inst.image}" alt="${inst.name}" class="w-full h-full object-cover">
+                    <div class="h-44 bg-navy-900 border-b border-slate-200 overflow-hidden">
+                        ${photoImg('images/instruments/' + slug(inst.name) + '.jpg', instrumentArt(kind, inst.name), inst.name, 'w-full h-full object-cover')}
                     </div>
                     <div class="p-6 flex-grow flex flex-col justify-between space-y-3">
                         <div>
@@ -1195,8 +1178,8 @@
                 </div>
             `;
 
-            document.getElementById('ms-instruments-grid').innerHTML = msInstruments.map(renderCard).join('');
-            document.getElementById('chrom-instruments-grid').innerHTML = chromInstruments.map(renderCard).join('');
+            document.getElementById('ms-instruments-grid').innerHTML = msInstruments.map(renderCard('ms')).join('');
+            document.getElementById('chrom-instruments-grid').innerHTML = chromInstruments.map(renderCard('lc')).join('');
         }
 
         // ===================================================================

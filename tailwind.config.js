@@ -9,7 +9,9 @@ module.exports = {
     xl: ['1.375rem', {lineHeight:'1.9rem'}],
     '2xl': ['1.625rem', {lineHeight:'2.1rem'}],
     '3xl': ['2rem', {lineHeight:'2.4rem'}],
+    '4xl': ['2.5rem', {lineHeight:'1.15'}],
     '5xl': ['3.25rem', {lineHeight:'1.1'}],
+    '6xl': ['4rem', {lineHeight:'1.08'}],
   },
   extend: {
     fontFamily: { sans: ['Inter','system-ui','sans-serif'], serif: ['"Source Serif 4"','Georgia','serif'], mono: ['"JetBrains Mono"','monospace'] },
