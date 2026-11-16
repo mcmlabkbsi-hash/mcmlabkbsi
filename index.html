@@ -669,7 +669,7 @@
             return frame(360, 360, `<circle cx="180" cy="180" r="92" fill="#0F2A52" fill-opacity=".8" ${STR}/><text x="180" y="205" fill="#E0F2FE" font-family="Georgia,serif" font-size="70" text-anchor="middle">${ini}</text>`);
         }
         // <img> with photo-first, generated-art fallback
-        const photoImg = (src, fallback, alt, cls) => `<img src="${src}" onerror="this.onerror=null;this.src='${fallback}'" alt="${alt}" loading="lazy" class="${cls}">`;
+        const photoImg = (src, fallback, alt, cls) => `<img src="${src}" onerror="this.onerror=null;this.src='${fallback}';this.className=this.className.replace('object-contain p-3','object-cover')" alt="${alt}" loading="lazy" class="${cls}">`;
         document.querySelectorAll('img[data-photo]').forEach(img => {
             const fb = initialsArt(img.alt);
             img.onerror = () => { img.onerror = null; img.src = fb; };
@@ -1162,8 +1162,8 @@
             const renderCard = kind => (inst) => `
                 <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col">
                     <!-- PHOTO PLACEHOLDER: Replace inst.image URL with actual lab instrument photo -->
-                    <div class="h-44 bg-navy-900 border-b border-slate-200 overflow-hidden">
-                        ${photoImg('images/instruments/' + slug(inst.name) + '.jpg', instrumentArt(kind, inst.name), inst.name, 'w-full h-full object-cover')}
+                    <div class="h-48 bg-white border-b border-slate-200 overflow-hidden">
+                        ${photoImg('images/instruments/' + slug(inst.name) + '.jpg', instrumentArt(kind, inst.name), inst.name, 'w-full h-full object-contain p-3')}
                     </div>
                     <div class="p-6 flex-grow flex flex-col justify-between space-y-3">
                         <div>
