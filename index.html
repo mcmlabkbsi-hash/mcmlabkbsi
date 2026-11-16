@@ -391,6 +391,7 @@
                         <div class="flex flex-wrap gap-1.5 rounded-xl bg-slate-100 p-1.5 text-xs font-medium" id="year-filters">
                             <button data-year="all" class="year-btn px-3.5 py-1.5 rounded-lg bg-white text-navy-900 shadow-sm transition-all">All</button>
                             <button data-year="selected" class="year-btn px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-navy-900 transition-all">Selected</button>
+                            <button data-year="2026" class="year-btn px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-navy-900 transition-all">2026</button>
                             <button data-year="2025" class="year-btn px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-navy-900 transition-all">2025</button>
                             <button data-year="2024" class="year-btn px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-navy-900 transition-all">2024</button>
                         </div>
@@ -882,6 +883,69 @@
         // ===================================================================
         const publications = [
             {
+                year: "2026",
+                selected: false,
+                title: "Separating Material Reactivity from Residual Oxygen in TGA–TOF MS of Natural and Artificial Graphite Anodes",
+                authors: "<strong>HJ Yoo</strong>, <strong>M Kim</strong>, YH Kim, WJ Jeon, BG Jin, J Oh, HS Kim, Y Kim, YK Kim, …",
+                journal: "Materials",
+                volume: "2026",
+                doi: null
+            },
+            {
+                year: "2026",
+                selected: false,
+                title: "Backbone-matched comparison of two trastuzumab-based antibody–drug conjugates: payload localization and gas-phase heterogeneity of trastuzumab deruxtecan and trastuzumab rezetecan",
+                authors: "<strong>HJ Yoo</strong>, <strong>A Mojumdar</strong>, <strong>M Kim</strong>, HB Oh, <strong>K Cho</strong>",
+                journal: "Journal of Analytical Science and Technology",
+                volume: "2026, 17(1), 50",
+                doi: null
+            },
+            {
+                year: "2026",
+                selected: false,
+                title: "Integrating FT-ICR MS with rule-based prediction and QSAR to resolve nitrogen-containing organic compounds and their toxicity in wildfire-derived PM2.5",
+                authors: "G Park, YG Ahn, N Van Kien, J Jo, <strong>E Jeon</strong>, SW Lee, S Oh, CS Cho, <strong>K Cho</strong>, …",
+                journal: "Environmental Research",
+                volume: "2026, 125576",
+                doi: null
+            },
+            {
+                year: "2026",
+                selected: false,
+                title: "Untargeted volatile fingerprinting of sesame oils using HS-SPME–GC×GC/HRMS for geographical origin discrimination",
+                authors: "<strong>E Jeon</strong>, <strong>HJ Yoo</strong>, <strong>M Park</strong>, JS Choi, HB Oh, <strong>K Cho</strong>, YH Kim",
+                journal: "Journal of Analytical Science and Technology",
+                volume: "2026, 17(1), 45",
+                doi: null
+            },
+            {
+                year: "2026",
+                selected: false,
+                title: "Preparation of cobalt-decorated porous carbon nanofibers and their application as supercapacitor electrodes",
+                authors: "KR Yoon, HJ Cho, MJ Park, SE Hong, <strong>K Cho</strong>",
+                journal: "Analytical Science and Technology",
+                volume: "2026, 39(2), 105–113",
+                doi: null
+            },
+            {
+                year: "2026",
+                selected: false,
+                title: "Practical LC–MS/MS Method Development for Antibody–Drug Conjugate (ADC) Payload Quantification Using an ADC-Like Antibody",
+                authors: "<strong>YW Koo</strong>, <strong>JY Hyon</strong>, J Choi, <strong>K Cho</strong>",
+                journal: "Mass Spectrometry Letters",
+                volume: "2026, 17(1), 1–7",
+                doi: null
+            },
+            {
+                year: "2025",
+                selected: false,
+                title: "Bacillus subtilis Induces Human Beta Defensin-2 Through its Lipoproteins in Human Intestinal Epithelial Cells",
+                authors: "YJ So, OJ Park, Y Kwon, J Im, D Lee, <strong>SH Yun</strong>, <strong>K Cho</strong>, CH Yun, SH Han",
+                journal: "Probiotics and Antimicrobial Proteins",
+                volume: "2025, 17(3), 1648–1662",
+                doi: "https://doi.org/10.1007/s12602-024-10224-4"
+            },
+            {
                 year: "2025",
                 selected: true,
                 title: "Proteomic analysis reveals the roles of silicon in mitigating glyphosate-induced toxicity in Brassica napus L.",
@@ -919,6 +983,8 @@
             }
         ];
 
+        const pubLink = p => p.doi || 'https://scholar.google.com/scholar?q=' + encodeURIComponent('"' + p.title + '"');
+
         let selectedYear = "all";
         let searchQuery = "";
 
@@ -939,7 +1005,7 @@
                     </div>
                     <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
                         <span class="font-mono text-slate-400">${pub.volume}</span>
-                        <a href="${pub.doi}" target="_blank" rel="noopener" class="text-science-600 font-medium hover:underline">DOI &nearr;</a>
+                        <a href="${pubLink(pub)}" target="_blank" rel="noopener" class="text-science-600 font-medium hover:underline">${pub.doi ? 'DOI' : 'Find'} &nearr;</a>
                     </div>
                 </article>
             `).join('');
@@ -983,8 +1049,8 @@
                     </h3>
                     <p class="text-sm text-slate-600 mt-2 leading-relaxed">${pub.authors}</p>
                     <div class="mt-3">
-                        <a href="${pub.doi}" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-mono font-medium text-science-600 hover:text-science-700 hover:underline">
-                            ${pub.doi} &nearr;
+                        <a href="${pubLink(pub)}" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-mono font-medium text-science-600 hover:text-science-700 hover:underline">
+                            ${pub.doi || 'Find on Google Scholar'} &nearr;
                         </a>
                     </div>
                 </article>
