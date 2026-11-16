@@ -1,6 +1,17 @@
 module.exports = {
   content: ['./index.html'],
-  theme: { extend: {
+  theme: {
+  fontSize: {
+    xs: ['0.875rem', {lineHeight:'1.35rem'}],
+    sm: ['1rem', {lineHeight:'1.5rem'}],
+    base: ['1.125rem', {lineHeight:'1.75rem'}],
+    lg: ['1.25rem', {lineHeight:'1.85rem'}],
+    xl: ['1.375rem', {lineHeight:'1.9rem'}],
+    '2xl': ['1.625rem', {lineHeight:'2.1rem'}],
+    '3xl': ['2rem', {lineHeight:'2.4rem'}],
+    '5xl': ['3.25rem', {lineHeight:'1.1'}],
+  },
+  extend: {
     fontFamily: { sans: ['Inter','system-ui','sans-serif'], serif: ['"Source Serif 4"','Georgia','serif'], mono: ['"JetBrains Mono"','monospace'] },
     colors: { navy: {900:'#0F172A',800:'#1E293B',700:'#334155'}, science: {50:'#EFF6FF',100:'#DBEAFE',600:'#1D4ED8',700:'#1E40AF'} }
   } },

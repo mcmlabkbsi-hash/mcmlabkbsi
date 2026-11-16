@@ -41,7 +41,7 @@
                 </a>
 
                 <!-- Desktop Tab Links -->
-                <nav class="hidden lg:flex items-center space-x-1 text-sm font-medium" aria-label="Main Tabs">
+                <nav class="hidden xl:flex items-center space-x-1 text-sm font-medium" aria-label="Main Tabs">
                     <a href="#home" data-tab="home" onclick="switchTab('home')" class="nav-tab px-3 py-2 rounded-lg transition-colors">Home</a>
                     <a href="#research" data-tab="research" onclick="switchTab('research')" class="nav-tab px-3 py-2 rounded-lg transition-colors">Research</a>
                     <a href="#team" data-tab="team" onclick="switchTab('team')" class="nav-tab px-3 py-2 rounded-lg transition-colors">Team</a>
@@ -52,7 +52,7 @@
                 </nav>
 
                 <!-- Mobile Hamburger Button -->
-                <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-controls="mobile-menu" aria-expanded="false" class="lg:hidden p-2.5 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-controls="mobile-menu" aria-expanded="false" class="xl:hidden p-2.5 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -61,7 +61,7 @@
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1">
+        <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1">
             <a href="#home" data-tab="home" onclick="switchTab('home')" class="mobile-tab block px-3.5 py-2.5 rounded-lg text-base font-medium">Home</a>
             <a href="#research" data-tab="research" onclick="switchTab('research')" class="mobile-tab block px-3.5 py-2.5 rounded-lg text-base font-medium">Research</a>
             <a href="#team" data-tab="team" onclick="switchTab('team')" class="mobile-tab block px-3.5 py-2.5 rounded-lg text-base font-medium">Team</a>
@@ -605,7 +605,7 @@
                                 <h3 class="font-serif text-xl font-medium text-navy-900">Campus Mailing Address</h3>
                                 <div class="text-sm text-slate-700 space-y-3 leading-relaxed">
                                     <div>
-                                        <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 block mb-1">English Address</span>
+                                        <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block mb-1">English Address</span>
                                         <p class="font-medium text-navy-900">
                                             Digital Omics Research Center / Biopharmaceutical Mass Spectrometry Research Unit<br>
                                             Ochang Institute for Biological and Environmental Science<br>
@@ -618,7 +618,7 @@
                                     </div>
 
                                     <div class="pt-3 border-t border-slate-100">
-                                        <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 block mb-1">Korean Address (국문 주소)</span>
+                                        <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block mb-1">Korean Address (국문 주소)</span>
                                         <p class="text-slate-700">
                                             28119 충청북도 청주시 청원구 오창읍 연구단지로 162<br>
                                             한국기초과학지원연구원 (KBSI) 오창센터 질량분석연구동(204동)
@@ -652,7 +652,7 @@
     <footer class="bg-slate-50 border-t border-slate-200 py-8 mt-auto">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
             <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
-                <img src="images/logo-mcm.png" alt="" class="h-5 w-auto"><span class="font-semibold text-navy-900">MCM Lab @ KBSI</span>
+                <img src="images/logo-mcm.png" alt="" class="h-4 w-auto"><span class="font-semibold text-navy-900">MCM Lab @ KBSI</span>
                 <span>•</span>
                 <span>Cho Research Group • Ochang, Cheongju-si, Republic of Korea</span>
             </div>
@@ -1118,7 +1118,7 @@
                     </div>
                     <div class="p-6 flex-grow flex flex-col justify-between space-y-3">
                         <div>
-                            <div class="flex items-center justify-between text-[11px] font-mono text-science-600 mb-1">
+                            <div class="flex items-center justify-between text-xs font-mono text-science-600 mb-1">
                                 <span>${inst.vendor}</span>
                                 <span class="text-slate-400">${inst.type}</span>
                             </div>
@@ -1187,7 +1187,7 @@
 
             document.getElementById('education-grid').innerHTML = educationTopics.map(topic => `
                 <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
-                    <span class="text-[11px] font-mono font-semibold text-science-600">${topic.code}</span>
+                    <span class="text-xs font-mono font-semibold text-science-600">${topic.code}</span>
                     <h3 class="font-semibold text-navy-900 text-base mt-1">${topic.title}</h3>
                     <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">${topic.desc}</p>
                 </div>
