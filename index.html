@@ -359,23 +359,13 @@
                         </div>
                     </div>
 
-                    <!-- Current Members Grid (9 Members) -->
-                    <div>
-                        <div class="flex items-center justify-between mb-6">
-                            <h2 class="font-serif text-2xl font-medium text-navy-900">Current Members</h2>
-                            <span class="text-xs font-mono text-slate-500">9 Researchers &amp; Students</span>
-                        </div>
-                        <div id="team-members-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                            <!-- Populated via JS teamMembers array -->
-                        </div>
-                    </div>
+                    <!-- Current Members (grouped, rendered from teamGroups) -->
+                    <div id="team-groups" class="space-y-14"></div>
 
-                    <!-- Alumni Section (3 Alumni) -->
-                    <div class="pt-8 border-t border-slate-200">
+                    <!-- Alumni (grouped, rendered from alumniGroups) -->
+                    <div class="pt-10 border-t border-slate-200">
                         <h2 class="font-serif text-2xl font-medium text-navy-900 mb-6">Lab Alumni</h2>
-                        <div id="alumni-list" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <!-- Populated via JS alumni array -->
-                        </div>
+                        <div id="alumni-groups" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
                     </div>
 
                 </div>
@@ -833,100 +823,60 @@
         // ===================================================================
         // 3. TEAM MEMBERS & ALUMNI DATA (All 9 Current + 3 Alumni)
         // ===================================================================
-        const teamMembers = [
-            {
-                name: "Sung-Ho Yun",
-                koreanName: "윤성호",
-                role: "Senior Researcher",
-                photo: ph(360,360,"f1f5f9","Sung-Ho Yun")
-            },
-            {
-                name: "Dr. Ju-Yong Hyon",
-                koreanName: "현주영",
-                role: "Post-Doctoral Researcher",
-                photo: ph(360,360,"f1f5f9","Ju-Yong Hyon")
-            },
-            {
-                name: "Hee-Jin Yoo",
-                koreanName: "유희진",
-                role: "Ph.D. Student",
-                photo: ph(360,360,"f1f5f9","Hee-Jin Yoo")
-            },
-            {
-                name: "Abhik Mojumdar",
-                koreanName: "",
-                role: "Ph.D. Student",
-                photo: ph(360,360,"f1f5f9","Abhik Mojumdar")
-            },
-            {
-                name: "Sun-Hee Choi",
-                koreanName: "최선희",
-                role: "Project Researcher",
-                photo: ph(360,360,"f1f5f9","Sun-Hee Choi")
-            },
-            {
-                name: "Yeo-Woon Ku",
-                koreanName: "구여운",
-                role: "Integrated Ph.D. Student",
-                photo: ph(360,360,"f1f5f9","Yeo-Woon Ku")
-            },
-            {
-                name: "Eunji Jeon",
-                koreanName: "전은지",
-                role: "Master's Student",
-                photo: ph(360,360,"f1f5f9","Eunji Jeon")
-            },
-            {
-                name: "Moonhee Park",
-                koreanName: "박문희",
-                role: "Technician",
-                photo: ph(360,360,"f1f5f9","Moonhee Park")
-            },
-            {
-                name: "Min-Sun Kim",
-                koreanName: "김민선",
-                role: "Technician",
-                photo: ph(360,360,"f1f5f9","Min-Sun Kim")
-            }
+        // To add a photo: set photo to e.g. "images/team/sungho-yun.jpg"
+        const teamGroups = [
+            { title: "Senior Researcher", members: [
+                { name: "Sungho Yun", koreanName: "윤성호", role: "Senior Researcher" } ] },
+            { title: "Technicians", members: [
+                { name: "Moonhee Park", koreanName: "박문희", role: "Technician" },
+                { name: "Minsun Kim", koreanName: "김민선", role: "Technician" } ] },
+            { title: "Graduate Students", sub: [
+                { label: "Ph.D. Students", members: [
+                    { name: "Heejin Yoo", koreanName: "유희진", role: "Ph.D. Student" },
+                    { name: "Abhik Mojumdar", koreanName: "", role: "Ph.D. Student" } ] },
+                { label: "Integrated Ph.D. Student", members: [
+                    { name: "Yeowoon Koo", koreanName: "구여운", role: "Integrated Ph.D. Student" } ] },
+                { label: "Master's Student", members: [
+                    { name: "Hyejin Kim", koreanName: "", role: "Master's Student" } ] }
+            ] }
         ];
 
-        const alumni = [
-            {
-                name: "Dr. Duck-Hyun Kim",
-                affiliation: "Post-Doctoral Researcher"
-            },
-            {
-                name: "Sujin Park",
-                affiliation: "Chungnam National University (CNU), M.S. Student"
-            },
-            {
-                name: "Jiwon Park",
-                affiliation: "GRAST (CNU), M.S. Student"
-            }
+        const alumniGroups = [
+            { title: "Post-Doctoral Researchers", people: ["Duck-Hyun Kim", "Ju Yong Hyeon"] },
+            { title: "Master's Graduates", people: ["Eunji Jeon", "Jiwon Park", "Sujin Park"] }
         ];
 
-        function renderTeam() {
-            const grid = document.getElementById('team-members-grid');
-            grid.innerHTML = teamMembers.map(m => `
+        function memberCard(m) {
+            const photo = m.photo || ph(360, 360, "f1f5f9", m.name);
+            return `
                 <div class="bg-white rounded-2xl border border-slate-200 p-5 hover:border-science-600/40 transition-colors">
-                    <!-- PHOTO PLACEHOLDER: Replace m.photo URL in teamMembers array with actual photo file -->
                     <div class="aspect-square rounded-xl overflow-hidden bg-slate-100 mb-4 border border-slate-100">
-                        <img src="${m.photo}" alt="${m.name}" class="w-full h-full object-cover">
+                        <img src="${photo}" alt="${m.name}" class="w-full h-full object-cover">
                     </div>
                     <h3 class="font-semibold text-navy-900 text-base">
                         ${m.name} ${m.koreanName ? `<span class="text-slate-500 font-normal text-sm">(${m.koreanName})</span>` : ''}
                     </h3>
                     <p class="text-xs font-medium text-science-600 mt-1">${m.role}</p>
-                </div>
-            `).join('');
+                </div>`;
+        }
+        const cardGrid = ms => `<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">${ms.map(memberCard).join('')}</div>`;
 
-            const alumniContainer = document.getElementById('alumni-list');
-            alumniContainer.innerHTML = alumni.map(a => `
-                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                    <div class="font-semibold text-sm text-navy-900">${a.name}</div>
-                    <div class="text-xs text-slate-600 mt-1">${a.affiliation}</div>
-                </div>
-            `).join('');
+        function renderTeam() {
+            document.getElementById('team-groups').innerHTML = teamGroups.map(g => `
+                <div>
+                    <h2 class="font-serif text-2xl font-medium text-navy-900 mb-6">${g.title}</h2>
+                    ${g.members ? cardGrid(g.members) : `<div class="space-y-8">${g.sub.map(sg => `
+                        <div>
+                            <h3 class="text-xs font-semibold uppercase tracking-widest text-science-600 mb-4">${sg.label}</h3>
+                            ${cardGrid(sg.members)}
+                        </div>`).join('')}</div>`}
+                </div>`).join('');
+
+            document.getElementById('alumni-groups').innerHTML = alumniGroups.map(g => `
+                <div>
+                    <h3 class="text-xs font-semibold uppercase tracking-widest text-science-600 mb-3">${g.title}</h3>
+                    <ul class="space-y-2">${g.people.map(p => `<li class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium text-navy-900">${p}</li>`).join('')}</ul>
+                </div>`).join('');
         }
 
         // ===================================================================
